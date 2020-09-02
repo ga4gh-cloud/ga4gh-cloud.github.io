@@ -1,17 +1,19 @@
 ---
-title: "Melanie Courtot"
+title: "Rishi Nag"
 layout: default
 excerpt_separator: <!--more-->
-image_file: 'courtot_melanie_web_2015_2.jpg'
+image_file: rnag.jpg
 category:
-  #- people
-  #- contact
+  - people
+  - contact
 tags:
   - contacts
   - contributors
   - leads
-  - CP
-  - .featured
+  - developers
+  - admins
+  - GA4GH
+  - Cloud
 ---
 
 {% for static_file in site.static_files %}
@@ -22,11 +24,11 @@ tags:
 
 ## {{ page.title }}
 
-European Bioinformatics Institute  
-Samples, Phenotypes and Ontologies  
-BioSamples/GA4GH Project Lead   
+Coordinator, GA4GH Cloud Workstream  
+Global Alliance for Genomics and Health  
+EMBL-EBI, Wellcome Genome Campus  
 
 <!--more-->
 
-email [courtot@ebi.ac.uk](mailto:courtot@ebi.ac.uk)  
-web [EBI](https://www.ebi.ac.uk/about/people/melanie-courtot)  
+email [rishi.nag@ga4gh.org](mailto:rishi.nag@ga4gh.org)  
+web [EBI](https://www.ebi.ac.uk/about/people/rishi-nag)  

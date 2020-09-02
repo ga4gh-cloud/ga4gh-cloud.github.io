@@ -3,9 +3,19 @@ layout: default
 ---
 
 {%- assign this_name = page.name | split: "." -%}
-{%- assign this_category = this_name[0] -%}
+{%- assign this_category = this_name[0] | replace: '-alpha-sorted-reverse', '' -%}
+{%- assign this_pagetitle = this_category  | upcase | replace: '_', ' ' -%}
 
-<h2 class="page_title">{{ this_category | upcase }}</h2>
+<div id="listpage_headline_wrapper">
+	<div id="listpage_sortmarker">
+		<a href="{{this_category}}-date-sorted.html">[date&nbsp;&darr;]</a>
+ 		<a href="{{this_category}}-date-sorted-reverse.html">[date&nbsp;&uarr;]</a>
+		<a href="{{this_category}}-alpha-sorted.html">[A&nbsp;&rarr;&nbsp;Z]</a>
+	</div>
+	<div id="listpage_headline">
+		<h2 class="page_title">{{ this_pagetitle }}</h2>
+	</div>
+</div>
 
 {%- comment -%}
   * collecting the pages
@@ -18,7 +28,7 @@ layout: default
   {%- endif -%}
 {%- endfor -%}
 
-{%- assign cat_posts = cat_posts | sort: 'date' | reverse -%}
+{%- assign cat_posts = cat_posts | sort: 'title' | reverse -%}
 
 {%- comment -%}
   * special posts for prepending content to the listing pages
@@ -38,13 +48,20 @@ layout: default
 {%- endcomment -%}
 
 {%- for post in cat_posts -%}
+
   {%- if post.tags contains '.featured' -%}
+    {%- assign excerpt_link = post.url | relative_url -%}
+    {%- if post.excerpt_link contains '/' -%}
+      {%- assign excerpt_link = post.excerpt_link -%}
+    {%- endif -%}
 <div class="excerpt">
-    {{ post.excerpt }}
+<a href="{{ excerpt_link }}">
+{{ post.excerpt }}
+</a>
   <p class="footnote">
-    {% if post.author %}{{ post.author | remove: "@" }}, {% endif %}
+    {%- if post.author -%}{{ post.author | join: " | " }}&nbsp;{%- endif -%}
     {% if post.date %}{{ post.date | date: "%Y-%m-%d" }}: {% endif %}
-    <a href="{{ post.url | relative_url }}">more ...</a>
+    <a href="{{ excerpt_link }}">more ...</a>
   </p>
 </div>
   {%- endif -%}
@@ -55,16 +72,22 @@ layout: default
 {%- endcomment -%}
 
 {%- for post in cat_posts -%}
-  {%- unless post.tags contains '.featured' or post.tags contains '.prepend' or post.tags contains '.append' -%} 
+  {% unless post.tags contains '.featured' or post.tags contains '.prepend' or post.tags contains '.append' %} 
+    {%- assign excerpt_link = post.url | relative_url -%}
+    {%- if post.excerpt_link contains '/' -%}
+      {%- assign excerpt_link = post.excerpt_link -%}
+    {%- endif -%}
 <div class="excerpt">
-    {{ post.excerpt }}
+<a href="{{ excerpt_link }}">
+{{ post.excerpt }}
+</a>
   <p class="footnote">
-    {% if post.author %}{{ post.author | remove: "@" }}, {% endif %}
+    {%- if post.author -%}{{ post.author | join: " | " }}&nbsp;{%- endif -%}
     {% if post.date %}{{ post.date | date: "%Y-%m-%d" }}: {% endif %}
-    <a href="{{ post.url | relative_url }}">more ...</a>
+    <a href="{{ excerpt_link }}">more ...</a>
   </p>
 </div>
-  {%- endunless -%}
+  {% endunless %}
 {%- endfor -%}
 
 {%- comment -%}
@@ -79,4 +102,3 @@ layout: default
 </div>
   {%- endif -%}
 {%- endfor -%}
-

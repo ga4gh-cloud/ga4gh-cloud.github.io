@@ -1,18 +1,32 @@
-title: 'GA4GH - DUO'
-label: 'GA4GH::DURI'
+title: 'GA4GH - Cloud'
+label: 'GA4GH::Cloud'
 tagline: 'A Workstream of the Global Alliance for Genomics and Health'
 description: |
-  DURI represents the data use requirements & conditions workstream of the Global Alliance for Genomics and Health
+  The Cloud Workstream helps Global Alliance for Genomics and Health (GA4GH) 
+  Driver Projects take full advantage of modern cloud environments. Its 
+  initial focus is on ‘bringing the algorithms to the data’, by creating 
+  standards for defining, sharing, and executing portable workflows. 
+  Standards under discussion include workflow definition languages, tool 
+  encapsulation, cloud-based task and workflow execution, and cloud-agnostic 
+  abstraction of data access.
 keywords:
-  - genomics
-  - Beacon
-  - DNA
+  - workflow
+  - tool
+  - task
+  - API
+  - cloud
+  - CWL
+  - WDL
+  - Nextflow
   - GA4GH
-  - DUO
-site_domain_name: "ga4gh-duri.github.io"
-url: "http://ga4gh-duri.github.io"
+  - WES
+  - TRS
+  - DRS
+  - TES
+site_domain_name: "ga4gh-cloud.github.io"
+url: "http://ga4gh-cloud.github.io"
 email: ga4gh-data-use-subgroup@ga4gh.org
-github_organisation: ebispot
+github_organisation: ga4gh
 
 # instructions for processing specific directories
 
@@ -37,12 +51,24 @@ collections:
   howto:
      output: true
      permalink: /howto/:path/
-  welcome:
-    output: true
-    permalink: /welcome/:path/
+  # welcome:
+  #   output: true
+  #   permalink: /welcome/:path/
   minutes:
     output: true
     permalink: /minutes/:path/
+  wes:
+    output: true
+    permalink: /wes/:path/
+  trs:
+    output: true
+    permalink: /trs/:path/
+  drs:
+    output: true
+    permalink: /drs/:path/
+  tes:
+    output: true
+    permalink: /tes/:path/
 # optional; here, all collections are inside "/pages"
 # if used, also the standard "_posts" directory has to be moved there!
 collections_dir: pages  
@@ -52,7 +78,9 @@ collections_dir: pages
 
 nav_cat_blocks: # comma-separated "label,type,label_visibility"
   General: 'General,categories,hide'
+  Products: 'Workstream Products,categories,show'
   related_sites: 'Related Sites,related_sites,show'
+  github_projects: 'Github Projects,github_projects,show'
   
 categories-date-sorted:
   - news
@@ -61,27 +89,38 @@ categories-date-sorted:
 General:
   #news: News
   documentation: Documentation
-  welcome: 'Strategy'
+  # welcome: 'Strategy'
   howto : 'Examples, Guides & FAQ'
   minutes: 'Meeting minutes'
   #people: Contact
   contact: Contacts
 
+Products:
+  wes: 'Workflow Execution Service'
+  trs: 'Tool Registry Service'
+  drs: 'Data Repository Service'
+  tes: 'Task Execution Service'
+
 related_sites: 
   'GA4GH::Discovery': 'http://ga4gh-discovery.github.io'
-  'GA4GH::CP': 'http://ga4gh-cp.github.io'
-  'GA4GH::GKS': 'http://ga4gh-gks.github.io'
-  'SchemaBlocks': 'http://schemablocks.org'
+  'GA4GH::DURI': 'http://ga4gh-duri.github.io'
   GA4GH: 'http://www.ga4gh.org'
 
+github_projects:
+  'Workflow Execution Service API': 'http://github.com/ga4gh-discovery/'
+  'Tool Registry Service API': 'http://github.com/ga4gh-beacon/'
+  'Data Repository Service API': 'http://github.com/ga4gh-schemablocks/'
+  'Task Execution Service API': 'http://github.com/ga4gh-schemablocks/'
 # tag_cloud items
 
 cloud_tags:
-  - CP
-  - Discovery
+  - Cloud
   - GA4GH
-  - GKS
-  - code
+  - WES
+  - TRS
+  - DRS
+  - TES
+  - GA4GH
   - admins
   - contacts
   - contributors

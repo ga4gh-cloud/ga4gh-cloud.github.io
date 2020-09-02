@@ -7,6 +7,8 @@ layout: default
 
 <h2 class="page_title">{{ this_category | capitalize }}</h2>
 
+*Coming soon...*
+
 {%- comment -%}
   * collecting the pages
 {%- endcomment -%}

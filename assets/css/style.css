@@ -157,7 +157,7 @@ section div.excerpt {
 /* LaTex */
 
 .tex sub, .latex sub, .latex sup {
-  text-transform: uppercase;
+  text-transform: upcase;
 }
 
 .tex sub, .latex sub {

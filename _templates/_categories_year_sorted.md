@@ -5,7 +5,7 @@ layout: default
 {%- assign this_name = page.name | split: "." -%}
 {%- assign this_category = this_name[0] -%}
 
-<h2 class="page_title">{{ this_category | capitalize }}</h2>
+<h2 class="page_title">{{ this_category | upcase }}</h2>
 
 {%- comment -%}
   * collecting the pages

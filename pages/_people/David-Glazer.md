@@ -1,17 +1,17 @@
 ---
-title: "Melissa Konopko"
+title: "David Glazer"
 layout: default
 excerpt_separator: <!--more-->
-image_file: 
+image_file: dglazer.png
 category:
   - contact
+  - people
 tags:
   - contacts
+  - leads
   - contributors
-  - admins
-  - GA4GH
-  - GKS
-  - CP
+  - Cloud
+  - .featured
 ---
 
 {% for static_file in site.static_files %}
@@ -22,10 +22,10 @@ tags:
 
 ## {{ page.title }}
 
-Technical Program Manager, GA4GH Data Use and Researcher IDs, Genomic Knowledge Standards, and Data Security Workstreams  
-Global Alliance for Genomics and Health  
+Co-chair GA4GH Cloud  
+Co-lead, Data Repository Service  
+Engineering Director, Verily Life Sciences  
 
 <!--more-->
 
-email [melissa.konopko@ga4gh.org](mailto:melissa.konopko@ga4gh.org)  
-web []()  
+email [dglazer@google.com](mailto:dglazer@google.com)
